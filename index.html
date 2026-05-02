@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Shamsou Painter</title>
 
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+    text-align: center;
+}
+
+/* Splash */
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+#splash img {
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: zoom 1.5s ease;
+}
+
+@keyframes zoom {
+    0% {transform: scale(0.5); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+@keyframes fadeOut {
+    to {opacity: 0; visibility: hidden;}
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    padding: 40px 20px;
+    color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: white;
+    padding: 8px;
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 10px 0 5px;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* Buttons */
+.btn {
+    padding: 14px 25px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Boxes */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(10px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+.info, .gallery, .location {
+    display: none;
+}
+
+/* Gallery */
+.gallery img {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    margin: 20px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Splash -->
+<div id="splash">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1500206796315558139/file_000000009a4871f6ad2cfb0f3f585cba.png?ex=69f797f4&is=69f64674&hm=8f2115e313e6dc39aee3865792ae2d656d05cef086e79131cc7e5ae5ce94fc94&">
+    <h2>𝐒𝐡𝐚𝐦𝐬𝐨𝐮 𝐏𝐚𝐧𝐭𝐞𝐫 𝐁𝐥𝐚𝐜𝐤𝐥𝐢𝐬𝐭</h2>
+    <p>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐒𝐞𝐭 𝐁𝐲 𝐎𝐮𝐒𝐒✋</p>
+    <button class="btn">🎨صفحة خاصة بمعلومات الدهان</button>
+</div>
+
+<!-- Header -->
+<header>
+    <img class="logo" src="https://cdn.discordapp.com/attachments/1500194697266725016/1500206796315558139/file_000000009a4871f6ad2cfb0f3f585cba.png?ex=69f797f4&is=69f64674&hm=8f2115e313e6dc39aee3865792ae2d656d05cef086e79131cc7e5ae5ce94fc94&">
+    <h1>Shamsou Painter</h1>
+    <p>Peinture • Décoration • Finition</p>
+</header>
+
+<!-- Buttons -->
+<button class="btn" onclick="toggleInfo()">ℹ️ معلومات عن العامل</button>
+<button class="btn" onclick="toggleGallery()">🖼️ خدمات من قبل</button>
+<button class="btn" onclick="toggleLocation()">📍 مكان العامل</button>
+
+<!-- Info -->
+<div id="info" class="info box">
+
+    <a href="tel:0670650213">
+        <button class="btn">📞𝐍𝐞𝐦𝐞𝐫𝐨 0670650213</button>
+    </a>
+
+    <a href="https://wa.me/213670650213" target="_blank">
+        <button class="btn">💬𝐖𝐚𝐡𝐚𝐭𝐬𝐚𝐩</button>
+    </a>
+
+    <a href="https://www.facebook.com/azouz.shamso" target="_blank">
+        <button class="btn">𝐅𝐚𝐜𝐛𝐞𝐤</button>
+    </a>
+
+    <a href="https://www.tiktok.com/@shamsodicor" target="_blank">
+        <button class="btn">𝐓𝐢𝐤𝐭𝐨𝐤</button>
+    </a>
+
+</div>
+
+<!-- Location -->
+<div id="location" class="location box">
+
+
+        <button class="btn">و🗾لاية :البليدة</button>
+        
+        <button class="btn">🌆دائرة:مفتاح</button>
+</div>
+
+<!-- Gallery -->
+<div id="gallery" class="gallery">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1500201782519926954/IMG20260121121029.jpg">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1500201781664153691/IMG20250210115539.jpg">
+    <img src="https://cdn.discordapp.com/attachments/1500194697266725016/1500201780724891841/IMG20250112153158.jpg">
+</div>
+
+<footer>
+© 2026 Shamsou Painter
+</footer>
+
+<script>
+function toggleInfo() {
+    let x = document.getElementById("info");
+    x.style.display = (x.style.display === "block") ? "none" : "block";
+}
+
+function toggleGallery() {
+    let x = document.getElementById("gallery");
+    x.style.display = (x.style.display === "block") ? "none" : "block";
+}
+
+function toggleLocation() {
+    let x = document.getElementById("location");
+    x.style.display = (x.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
